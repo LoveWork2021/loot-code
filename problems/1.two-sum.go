@@ -2,6 +2,8 @@ package main
 
 import "fmt"
 
+// https://leetcode-cn.com/problems/two-sum
+
 func twoSum(nums []int, target int) []int {
 	m := map[int]int{}
 
