@@ -65,5 +65,3 @@ func main() {
 	r := fourSum([]int{1, 0, -1, 0, -2, 2}, 0)
 	fmt.Println(r)
 }
-
-// COMMENT: 排序+双指针可以去掉一重循环

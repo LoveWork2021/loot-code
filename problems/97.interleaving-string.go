@@ -40,12 +40,3 @@ func main() {
 	)
 	fmt.Println(r)
 }
-
-/*
- * COMMENT: 动态规划
- * f(i,j) 表示 s1 的前 i 位 + s2 的前 j 位能组成 s3 的前 i+j 位
- *
- * 假设 s1[i] == s[i+j]，那么 f(i,j) = f(i-1,j)
- * 所有 f(i,j) = (f(i-1,j) && s1[i] = s3[i+j]) || (f(i,j-1) && s2[j] = s3[i+j])
- *
- */

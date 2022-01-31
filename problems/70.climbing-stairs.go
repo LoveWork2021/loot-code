@@ -18,5 +18,3 @@ func main() {
 	r := climbStairs(2)
 	fmt.Println(r)
 }
-
-// COMMENT: 动态规划！！！最后一步可能是两步或者一步，所以 f(x) = f(x-1) + f(x-2)

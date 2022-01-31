@@ -4,6 +4,7 @@ import "fmt"
 
 // https://leetcode-cn.com/problems/implement-strstr
 
+// 暴力算法实现
 func strStr(haystack string, needle string) int {
 	n, m := len(haystack), len(needle)
 outer:
@@ -25,5 +26,3 @@ func main() {
 	)
 	fmt.Println(r)
 }
-
-// COMMENT: 暴力算法，可以看看 kmp
