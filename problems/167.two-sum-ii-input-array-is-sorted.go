@@ -25,5 +25,3 @@ func main() {
 	r := twoSum([]int{2, 7, 11, 15}, 9)
 	fmt.Println(r)
 }
-
-// COMMENT: 双指针解法，利用数组有序
