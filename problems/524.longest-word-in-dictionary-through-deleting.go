@@ -41,5 +41,3 @@ func main() {
 	r := findLongestWord("aaa", []string{"aaa", "aa", "a"})
 	fmt.Println(r)
 }
-
-// COMMENT: 先排序，一个个匹配

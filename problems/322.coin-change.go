@@ -40,5 +40,3 @@ func main() {
 	r := coinChange([]int{2}, 3)
 	fmt.Println(r)
 }
-
-// COMMENT: 动态规划，多个数相加成一个数，最小组合

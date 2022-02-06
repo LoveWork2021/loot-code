@@ -22,5 +22,3 @@ func main() {
 	r := fib(2)
 	fmt.Println(r)
 }
-
-// COMMENT: 注意空间复杂度和时间复杂度

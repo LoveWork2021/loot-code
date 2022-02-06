@@ -1,5 +1,7 @@
 package main
 
+import "fmt"
+
 // https://leetcode-cn.com/problems/path-sum
 
 type TreeNode struct {
@@ -55,5 +57,33 @@ func hasPathSum(root *TreeNode, targetSum int) bool {
 }
 
 func main() {
+	type V struct {
+		i int
+	}
 
+	toTree := func(list []*V) *TreeNode {
+		ns := make([]*TreeNode, len(list))
+		for i, v := range list {
+			if v == nil {
+				continue
+			}
+
+			j := i / 2
+
+			n := &TreeNode{v.i, nil, nil}
+			ns[i] = n
+
+			if i != 0 && i%2 == 0 {
+				j--
+				ns[j].Right = n
+			} else {
+				ns[j].Left = n
+			}
+		}
+
+		return ns[0]
+	}
+
+	r := hasPathSum(toTree([]*V{&V{1}, &V{2}, &V{3}}), 5)
+	fmt.Println(r)
 }

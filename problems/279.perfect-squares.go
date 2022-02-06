@@ -1,20 +1,18 @@
 package main
 
-import (
-	"fmt"
-	"math"
-)
+import "fmt"
 
 // https://leetcode-cn.com/problems/perfect-squares
 
 func numSquares(n int) int {
 	f := make([]int, n+1)
 	for i := 1; i <= n; i++ {
-		minn := math.MaxInt32
+    // 最坏情况，全部为 1 相加 
+		minn := i
 		for j := 1; j*j <= i; j++ {
-			minn = min(minn, f[i-j*j])
+			minn = min(minn, f[i-j*j]+1)
 		}
-		f[i] = minn + 1
+		f[i] = minn
 	}
 	return f[n]
 }
@@ -30,5 +28,3 @@ func main() {
 	r := numSquares(12)
 	fmt.Println(r)
 }
-
-// COMMENT: 动态规划，多个数相加成一个数，最小组合

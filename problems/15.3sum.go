@@ -61,5 +61,3 @@ func main() {
 	r := threeSum([]int{-1, 0, 1, 2, -1, -4})
 	fmt.Println(r)
 }
-
-// COMMENT: 先排序数组，可知 a <= b <= c，注意数组长度

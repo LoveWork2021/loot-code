@@ -1,5 +1,7 @@
 package main
 
+import "fmt"
+
 // https://leetcode-cn.com/problems/kth-smallest-element-in-a-bst
 
 type TreeNode struct {
@@ -25,7 +27,33 @@ func ldr(node *TreeNode, arr *[]int) {
 }
 
 func main() {
+	type V struct {
+		i int
+	}
 
+	toTree := func(list []*V) *TreeNode {
+		ns := make([]*TreeNode, len(list))
+		for i, v := range list {
+			if v == nil {
+				continue
+			}
+
+			j := i / 2
+
+			n := &TreeNode{v.i, nil, nil}
+			ns[i] = n
+
+			if i != 0 && i%2 == 0 {
+				j--
+				ns[j].Right = n
+			} else {
+				ns[j].Left = n
+			}
+		}
+
+		return ns[0]
+	}
+
+	r := kthSmallest(toTree([]*V{&V{3}, &V{1}, &V{34}, nil, &V{2}}), 1)
+	fmt.Println(r)
 }
-
-// COMMENT: 二叉搜索树的左/右子树均小于/大于根节点；子树也是一颗二叉搜索树；中序遍历后是有序的数组

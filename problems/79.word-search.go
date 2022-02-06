@@ -66,7 +66,3 @@ func main() {
 	)
 	fmt.Println(r)
 }
-
-/*
- * COMMENT: 回溯算法（迭代），注意剪枝
- */
